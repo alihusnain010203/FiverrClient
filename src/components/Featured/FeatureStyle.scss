@@ -1,0 +1,124 @@
+.featured{
+    height: 300px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #013914;
+    .container{
+      padding: 15px;
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       width: 100%;
+       .left{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        h1{
+            color: white;
+            i{
+                font-weight: 300;
+            }
+@media screen and (max-width: 600px) {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+        font-size: 28px;
+    
+    
+}
+@media screen and (max-width: 300px) {
+    
+        font-size: 20px;
+    
+}
+     
+        }
+        .search{
+            display: flex;
+            background-color: white;
+            align-items: center;
+            justify-content: space-between;
+            border: 1px solid lightgray;
+            border-radius: 15px;
+            padding: 2px;
+            .searchInput{
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                img{
+                    width: 20px;
+                    height: 20px;
+                    margin: 10px;
+                }
+                input{
+                    border: none;
+                    outline: none;
+                    
+                }
+            }
+            .searchButton{
+                border: none;
+                padding: 5px 10px;
+                color: #013914;
+                background-color: transparent;
+                height: 30px;
+                @media screen and (max-width: 600px) {
+                    font-size: 10px;
+                    padding: 3px 5px;
+                }
+            }
+            @media screen and (max-width: 600px) {
+                width: 300px;
+            }
+            @media screen and (max-width: 300px) {
+                width: 250px;
+            }
+        }
+        .popular{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            span{
+                color: white;
+
+            }
+            button{
+                background-color: transparent;
+                color: white;
+                border: 1px solid white;
+                padding: 5px 10px;
+                border-radius: 20px;
+                cursor: pointer;
+                &:hover{
+                    background-color: #1dbf73;
+                    border: 1px solid #1dbf73;
+
+                }
+                @media screen and (max-width: 600px) {
+                    font-size: 10px;
+                    padding: 3px 5px;
+                }
+                @media screen and (max-width: 300px) {
+                    font-size: 7px;
+                    
+                }
+            }
+            @media screen and (max-width: 600px) {
+                gap: 5px;
+            font-size: 10px;
+            }
+        }
+       }
+       .right{
+        img{
+            object-fit: contain;
+        }
+        @media screen and (max-width: 800px) {
+            display: none;
+        }
+       }
+    }
+}

@@ -1,0 +1,103 @@
+.Gigs {
+  display: flex;
+  justify-content: center;
+  .container {
+    width: 85%;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    .breadcrumbs {
+      font-weight: 300;
+      font-size: 13px;
+      color: #555;
+    }
+    p {
+      color: #555;
+      font-weight: 300;
+    }
+    .menu {
+      display: flex;
+      gap: 20px;
+      justify-content: space-between;
+      align-items: center;
+      .left {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        color: #555;
+        input{
+          padding: 5px;
+          outline: none;
+          border: 1px solid lightgray;
+          border-radius: 5px;
+        }
+        button{
+          background-color: #1dbf73;
+          color: white;
+          font-weight: 500;
+          border-radius: 5px;
+          border: none;
+          padding: 5px 5px;
+          cursor: pointer;
+        }
+        @media screen and (max-width: 768px) {
+          flex-direction: column;
+            
+        }
+      }
+      .right {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        position: relative;
+        .sortBy{
+            color:#555;
+            font-weight: 300;
+        }
+        .sortType{
+            border: 1px solid lightgray;
+            padding: 5px;
+            border-radius: 5px;
+           
+        }
+        img{
+            width: 24x;
+            height: 24px;
+            cursor: pointer;
+        }
+        .rightmenu{
+            position: absolute;
+            top: 40px;
+            background-color: white;
+            padding: 10px;
+            border: 1px solid lightgray;
+            border-radius: 2px;
+            display: flex;
+            color: #555;
+            gap: 10px;
+            flex-direction: column;
+            z-index: 999;
+            span{
+                cursor: pointer;
+            }
+            hr{
+                width: 100%;
+            }
+        }
+      }
+      
+      @media screen and (max-width: 768px) {
+        flex-direction: column;
+      }
+    }
+    .cards{
+        padding: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+  }
+}

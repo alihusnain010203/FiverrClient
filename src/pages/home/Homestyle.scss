@@ -1,0 +1,140 @@
+.home {
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  // flex-direction: column;
+  .features {
+    background-color: #f7efef;
+    margin-top: 20px;
+   width: 100%;
+    &.dark {
+      background-color: #0d084d;
+margin-bottom: 20px;
+      h1 {
+        color: white !important;
+      }
+
+      i {
+        font-weight: 300;
+      }
+
+      p {
+        margin-bottom: 20px;
+        color: white !important;
+      }
+
+      .title {
+        color: white !important;
+        font-weight: 300 !important;
+        font-size: 14px !important;
+      }
+      .item{
+        img{
+          width: 500px;
+          height: 500px;
+          object-fit: contain;
+          @media screen and (max-width: 500px) {
+            width: 280px;
+            height: 280px;
+
+          }
+        }
+      }
+
+      button {
+        background-color: #1dbf73;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        width: max-content;
+        font-size: 16px;
+        cursor: pointer;
+        margin-top: 20px;
+      }
+    }
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      // width: 85%;
+      padding: 20px 20px;
+      @media screen and (max-width: 800px) {
+        flex-direction: column;
+        gap: 20px;
+      }
+      .item {
+        display: flex;
+        gap: 20px;
+        flex-direction: column;
+        .title {
+          display: flex;
+          align-items: center;
+          font-weight: bolder;
+         img{
+          width: 24px;
+          height: 24px;
+         }
+        }
+        iframe{
+          @media screen and (max-width: 350px) {
+            width: 280px;
+          }
+        }
+      }
+    }
+  }
+  
+  .explore {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 0px;
+
+    .container {
+      width: 85%;
+
+      h1{
+        color: #555;
+      }
+
+      .items {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        .item {
+          width: 250px;
+          height: 150px;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          cursor: pointer;
+
+          img {
+            width: 50px;
+            height: 50px;
+          }
+
+          .line{
+            width: 50px;
+            height: 2px;
+            background-color: lightgray;
+            transition: all .3s ease;
+          }
+
+          span {
+            font-weight: 300;
+          }
+
+          &:hover{
+            .line{
+              width: 80px;
+              background-color: #1dbf73;
+            }}}}}
+  }
+}

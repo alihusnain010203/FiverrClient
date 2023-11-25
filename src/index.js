@@ -1,0 +1,13 @@
+import Home from './pages/home/Home.jsx'
+import Login from './pages/login/Login.jsx'
+import Register from './pages/register/Register.jsx'
+import Gig from './pages/Gig/Gig.jsx'
+import Gigs from './pages/Gigs/Gigs.jsx'
+import AddGig from './pages/AddGig/AddGig.jsx'
+import MyGig from './pages/MyGig/MyGig.jsx'
+import Order from './pages/orders/Order.jsx'
+import Messages from './pages/messages/Messages.jsx'
+import Message from './pages/message/Message.jsx'
+import Navbar from './components/Navbar/Navbar.jsx'
+import Footer from './components/Footer/Footer.jsx'
+export { Home, Login, Register, Gig, Gigs, AddGig, MyGig, Order, Messages, Message ,Navbar,Footer};

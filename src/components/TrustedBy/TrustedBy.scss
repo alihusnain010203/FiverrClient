@@ -1,0 +1,34 @@
+.trustedBy {
+    background-color: #fafafa;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+  
+    .container {
+      max-width: 760px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      color: rgb(200, 200, 200);
+      font-weight: 500;
+      span{
+        @media screen and (max-width: 600px) {
+            font-size: 12px;
+        }
+      }
+      img{
+        height: 50px;
+        object-fit: contain;
+        @media screen and (max-width: 600px) {
+            height: 25px;
+        }
+      }
+      @media screen and (max-width: 600px) {
+        gap: 8px;
+      }
+    }
+    @media screen and (max-width: 600px) {
+        height: 50px;
+        
+    }
+}
