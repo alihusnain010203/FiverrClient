@@ -1,0 +1,85 @@
+.messages {
+    display: flex;
+    justify-content: center;
+  
+    .container {
+      width: 1400px;
+      padding: 50px 0px;
+  
+      .title {
+        display: flex;
+        justify-content: space-between;
+  
+        button {
+          background-color: #1dbf73;
+          color: white;
+          font-weight: 500;
+          border: none;
+          padding: 10px;
+          cursor: pointer;
+        }
+      }
+  
+      table {
+        width: 100%;
+  
+        tr {
+          height: 100px;
+          
+          th {
+            text-align: left;
+            @media screen and (max-width: 800px) {
+                // display: none;
+                font-size: 15px;
+            }
+          }
+          td {
+            padding: 10px;
+            .link{
+                @media screen and (max-width: 600px) {
+                    font-size: 12px;
+                }
+            }
+  
+            @media screen and (max-width: 800px) {
+                // display: none;
+                font-size: 15px;
+            }
+            &:first-child {
+              font-weight: 500;
+              @media screen and (max-width: 800px) {
+                 font-size: 12px;
+                
+              }
+            }
+            
+            &:nth-child(2),
+            &:nth-child(3) {
+              color: gray;
+
+            }
+            &:nth-child(3){
+                @media screen and (max-width: 800px) {
+                    font-size: 12px;
+                }
+            }
+          }
+  
+          button {
+            background-color: #1dbf73;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            @media screen and (max-width: 800px) {
+                font-size: 12px;
+            }
+          }
+  
+          &.active {
+            background-color: #1dbf730f;
+          }
+        }
+      }
+    }
+  }

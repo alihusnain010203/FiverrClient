@@ -1,6 +1,6 @@
 import React from 'react'
 import './App.scss'
-import {Home, Login, Register,Gig,Gigs,AddGig,MyGig,Order,Messages,Message,Navbar,Footer} from './index.js'
+import {Home, Login, Register,Gig,Gigs,Add,MyGig,Order,Messages,Message,Navbar,Footer} from './index.js'
 import {
   createBrowserRouter,
   RouterProvider,
@@ -44,7 +44,7 @@ const App = () => {
         },
         {
           path: "/add",
-          element: <AddGig />
+          element: <Add />
         },
         {
           path: "/mygigs",
