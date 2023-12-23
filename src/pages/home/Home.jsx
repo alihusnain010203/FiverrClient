@@ -1,22 +1,23 @@
-import React from 'react'
-import './Homestyle.scss'
-import Featured from '../../components/Featured/Featured'
-import TrustedBy from '../../components/TrustedBy/TrustedBy'
-import CategoryCard from '../../components/CategoryCard/CategroryCard.jsx'
-import Slide from '../../components/Slide/Slide.jsx'
-import {cards,projects} from '../../dummydata.js'
-import ProjectCard from '../../components/projectCard/ProjectCard'
+import React from "react";
+import "./Homestyle.scss";
+import Featured from "../../components/Featured/Featured";
+import TrustedBy from "../../components/TrustedBy/TrustedBy";
+import CategoryCard from "../../components/CategoryCard/CategroryCard.jsx";
+import Slide from "../../components/Slide/Slide.jsx";
+import { cards, projects } from "../../dummydata.js";
+import ProjectCard from "../../components/projectCard/ProjectCard";
 const Home = () => {
   return (
     <div className="home">
-      <Featured/>
-      <TrustedBy/><Slide wheelScroll={3} slidesToShow={3}>
-        {cards.map((card)=>(
-          <CategoryCard key={card.id} item={card}/>
+      <Featured />
+      <TrustedBy />
+      <Slide wheelScroll={3} slidesToShow={3}>
+        {cards.map((card) => (
+          <CategoryCard key={card.id} item={card} />
         ))}
-        </Slide>
-      
-        <div className="features">
+      </Slide>
+
+      <div className="features">
         <div className="container">
           <div className="item">
             <h1>A whole world of freelance talent at your fingertips</h1>
@@ -54,7 +55,14 @@ const Home = () => {
             </p>
           </div>
           <div className="item">
-          <iframe width="320" height="315" src="https://www.youtube.com/embed/5U9fiPmcSKk?si=Nuk4L8zMwDcfhThI" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+            <iframe
+              width="320"
+              height="315"
+              src="https://www.youtube.com/embed/5U9fiPmcSKk?si=Nuk4L8zMwDcfhThI"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            ></iframe>
           </div>
         </div>
       </div>
@@ -188,9 +196,8 @@ const Home = () => {
           <ProjectCard key={card.id} card={card} />
         ))}
       </Slide>
-          </div>
-  
-  )
-}
+    </div>
+  );
+};
 
-export default Home
+export default Home;

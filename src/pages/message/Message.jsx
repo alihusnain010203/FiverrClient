@@ -1,9 +1,8 @@
-import React from 'react'
-import './Messagestyle.scss'
-import { Link } from 'react-router-dom'
+import React from "react";
+import "./Messagestyle.scss";
+import { Link } from "react-router-dom";
 const Message = () => {
   return (
-   
     <div className="message">
       <div className="container">
         <span className="breadcrumbs">
@@ -198,7 +197,7 @@ const Message = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Message
+export default Message;

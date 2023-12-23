@@ -1,26 +1,30 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Link, useLocation } from "react-router-dom";
+import newRequest from "../../utils/NewRequest";
 import "./navbar.scss";
-
 const Navbar = () => {
+  const navigate = useNavigate();
   const [active, setActive] = useState(false);
   const [options, setOptions] = useState(false);
   const [showLinks, setShowLinks] = useState(window.innerWidth > 800);
-  const {pathname}=useLocation();
-  const CurrenUser = {
-    id: 1,
-    username: "johndoe",
-    isSeller: true,
-  };
-
+  const { pathname } = useLocation();
+  const CurrenUser = JSON.parse(localStorage.getItem("currentUser"));
   const isActive = () => {
     window.scrollY > 0 ? setActive(true) : setActive(false);
   };
-
+  const handleLogout = async () => {
+    try {
+      await newRequest.post("/auth/logout");
+      localStorage.setItem("currentUser", null);
+      navigate("/");
+    } catch (err) {
+      console.log(err);
+    }
+  };
   const handleResize = () => {
     setShowLinks(window.innerWidth > 800);
   };
-
   useEffect(() => {
     window.addEventListener("scroll", isActive);
     window.addEventListener("resize", handleResize);
@@ -30,19 +34,18 @@ const Navbar = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-
   const toggleLinks = () => {
     setShowLinks(!showLinks);
   };
-
   return (
-    <div className={(active || pathname !== "/") ? "navbar active" : "navbar"}>
+    <div className={active || pathname !== "/" ? "navbar active" : "navbar"}>
       <div className="container">
-        <Link to="/" className="link"><div className="logo">
-          <span className="text">fiverr</span>
-          <span className="dot">.</span>
-        </div></Link>
-        
+        <Link to="/" className="link">
+          <div className="logo">
+            <span className="text">fiverr</span>
+            <span className="dot">.</span>
+          </div>
+        </Link>
 
         <div className="hamburger" onClick={toggleLinks}>
           <div className="bar"></div>
@@ -56,12 +59,29 @@ const Navbar = () => {
             <span>Fiverr Business</span>
             <span>Explore</span>
             <span>English</span>
-            {!CurrenUser &&<Link to="/login"><span>Sign in</span></Link> }
-            {!CurrenUser.isSeller && <span>Become a Seller</span>}
+
+            {!CurrenUser?.isSeller && <span>Become a Seller</span>}
+            {!CurrenUser && (
+              <Link to="/login" className="link">
+                <span>Sign in</span>
+              </Link>
+            )}
+            {!CurrenUser && (
+              <Link className="link" to="/register">
+                <button
+                  className={`${active || pathname !== "/" ? "activebtn" : ""}`}
+                >
+                  Join
+                </button>
+              </Link>
+            )}
             {CurrenUser && (
               <div className="user" onClick={() => setOptions(!options)}>
                 <img
-                  src="https://images.pexels.com/photos/1115697/pexels-photo-1115697.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                  src={
+                    CurrenUser.img ||
+                    "https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+                  }
                   width="32"
                   height="32"
                   alt=""
@@ -71,13 +91,23 @@ const Navbar = () => {
                   <div className="options">
                     {CurrenUser.isSeller && (
                       <>
-                        <Link to={"/mygigs"} className="link" >Gigs</Link>
-                        <Link to={"/add"} className="link" >Add New Gig</Link>
+                        <Link to={"/mygigs"} className="link">
+                          Gigs
+                        </Link>
+                        <Link to={"/add"} className="link">
+                          Add New Gig
+                        </Link>
                       </>
                     )}
-                    <Link to={"/orders"} className="link">My Orders</Link>
-                    <Link to={"/messages"}  className="link">Messages</Link>
-                    <Link to={"/"} className="link" >Log Out</Link>
+                    <Link to={"/orders"} className="link">
+                      My Orders
+                    </Link>
+                    <Link to={"/messages"} className="link">
+                      Messages
+                    </Link>
+                    <Link className="link" onClick={handleLogout}>
+                      Log Out
+                    </Link>
                   </div>
                 )}
               </div>
@@ -124,5 +154,4 @@ const Navbar = () => {
     </div>
   );
 };
-
 export default Navbar;

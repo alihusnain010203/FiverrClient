@@ -1,31 +1,32 @@
-import React, { useEffect, useState } from 'react';
-import './Slidestyle.scss';
-import Slider from 'infinite-react-carousel';
+import React, { useEffect, useState } from "react";
+import "./Slidestyle.scss";
+import Slider from "infinite-react-carousel";
 
-const Slide = ({ children,slide,wheel}) => {
-  const [slidesToShow, setSlidesToShow] = useState(4);
-  // const slidesToShow = window.innerWidth < 500
-  //   ? 1
-  //   : window.innerWidth >= 500 && window.innerWidth <= 900
-  //   ? 2
-  //   : 4;
+const Slide = ({ children, slide, wheel }) => {
+  const [slidesToShow, setSlidesToShow] = useState(3);
 
-  // const wheelScroll = window.innerWidth < 500 ? 1 : 2; // You can adjust the value for wheelScroll as needed
-useEffect(() => {
-  window.addEventListener('resize', () => {
-    if (window.innerWidth < 500) {
-      setSlidesToShow(1);
-    } else if (window.innerWidth >= 500 && window.innerWidth <= 900) {
-      setSlidesToShow(2);
-    } else {
-      setSlidesToShow(4);
-    }
-  });
-}, []);
+  useEffect(() => {
+    const updateSlidesToShow = () => {
+      const windowWidth = window.innerWidth;
+  
+      if (windowWidth > 800) {
+        setSlidesToShow(3);
+      }
+      else if(windowWidth < 800 && windowWidth > 500){
+        setSlidesToShow(2);
+      }
+      else{
+        setSlidesToShow(1);
+      }
+    };
+  
+    window.addEventListener("resize", updateSlidesToShow);
+  },[]);
+  
   return (
     <div className="slide">
       <div className="container">
-        <Slider slidesToShow={slide? slide : slidesToShow} wheelScroll={wheel} >
+        <Slider slidesToShow={slide ? slide : slidesToShow} wheelScroll={wheel}>
           {children}
         </Slider>
       </div>
@@ -34,3 +35,4 @@ useEffect(() => {
 };
 
 export default Slide;
+

@@ -1,36 +1,36 @@
-import React from 'react'
-import './FeatureStyle.scss'
+import React from "react";
+import "./FeatureStyle.scss";
 const Featured = () => {
   return (
     <div className="featured">
-        <div className="container">
-            <div className="left">
-              <h1>
-                Find the perfect <i>freelance</i>
-                <br />
-                services for your business
-              </h1>
-              <div className="search">
-                <div className="searchInput">
-                  <img src="./img/search.png" alt="" />
-                  <input type="text" placeholder='Try "building mobile app"' />
-                </div>
-                <button className='searchButton'>Search</button>
-              </div>
-              <div className="popular">
-                <span>Popular:</span>
-                <button>Web Design</button>
-                <button>WordPress</button>
-                <button>Logo Design</button>
-                <button>AI Services</button>
-              </div>
+      <div className="container">
+        <div className="left">
+          <h1>
+            Find the perfect <i>freelance</i>
+            <br />
+            services for your business
+          </h1>
+          <div className="search">
+            <div className="searchInput">
+              <img src="./img/search.png" alt="" />
+              <input type="text" placeholder='Try "building mobile app"' />
             </div>
-            <div className="right">
-                <img src="./img/man.png" height={"300px"} width={"300px"} alt="" />
-            </div>
+            <button className="searchButton">Search</button>
+          </div>
+          <div className="popular">
+            <span>Popular:</span>
+            <button>Web Design</button>
+            <button>WordPress</button>
+            <button>Logo Design</button>
+            <button>AI Services</button>
+          </div>
         </div>
+        <div className="right">
+          <img src="./img/man.png" height={"300px"} width={"300px"} alt="" />
+        </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Featured
+export default Featured;

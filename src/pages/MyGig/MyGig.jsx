@@ -37,7 +37,9 @@ function MyGigs() {
               />
             </td>
             <td>Stunning concept art</td>
-            <td>59.<sup>99</sup></td>
+            <td>
+              59.<sup>99</sup>
+            </td>
             <td>13</td>
             <td>
               <img className="delete" src="./img/delete.png" alt="" />
@@ -52,7 +54,9 @@ function MyGigs() {
               />
             </td>
             <td>Ai generated concept art</td>
-            <td>120.<sup>99</sup></td>
+            <td>
+              120.<sup>99</sup>
+            </td>
             <td>41</td>
             <td>
               <img className="delete" src="./img/delete.png" alt="" />
@@ -67,7 +71,9 @@ function MyGigs() {
               />
             </td>
             <td>High quality digital character</td>
-            <td>79.<sup>99</sup></td>
+            <td>
+              79.<sup>99</sup>
+            </td>
             <td>55</td>
             <td>
               <img className="delete" src="./img/delete.png" alt="" />
@@ -82,7 +88,9 @@ function MyGigs() {
               />
             </td>
             <td>Illustration hyper realistic painting</td>
-            <td>119.<sup>99</sup></td>
+            <td>
+              119.<sup>99</sup>
+            </td>
             <td>29</td>
             <td>
               <img className="delete" src="./img/delete.png" alt="" />
@@ -97,7 +105,9 @@ function MyGigs() {
               />
             </td>
             <td>Original ai generated digital art</td>
-            <td>59.<sup>99</sup></td>
+            <td>
+              59.<sup>99</sup>
+            </td>
             <td>34</td>
             <td>
               <img className="delete" src="./img/delete.png" alt="" />
@@ -112,7 +122,9 @@ function MyGigs() {
               />
             </td>
             <td>Text based ai generated art</td>
-            <td>110.<sup>99</sup></td>
+            <td>
+              110.<sup>99</sup>
+            </td>
             <td>16</td>
             <td>
               <img className="delete" src="./img/delete.png" alt="" />

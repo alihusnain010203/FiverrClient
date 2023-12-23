@@ -1,16 +1,27 @@
-// import React from 'react'
-// import './Gigstyle.scss'
-// import Slider from '../../components/Slide/Slide.jsx'
 import React from "react";
 import "./Gigstyle.scss";
 import { Slider } from "infinite-react-carousel/lib";
+import {  useParams } from "react-router-dom";
+import newRequest from '../../utils/NewRequest.js'
 
 function Gig() {
+  const {id}=useParams();
+  const fetch=async()=>{
+    try {
+      const res=await newRequest.get(`/gigs/get/${id}`);
+    console.log(res.data)
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  fetch();
   return (
     <div className="gig">
       <div className="container">
         <div className="left">
-          <span className="breadcrumbs">Liverr {">"} Graphics & Design {">"}</span>
+          <span className="breadcrumbs">
+            Liverr {">"} Graphics & Design {">"}
+          </span>
           <h1>I will create ai generated art for you</h1>
           <div className="user">
             <img
@@ -73,10 +84,10 @@ function Gig() {
                   <img src="/img/star.png" alt="" />
                   <img src="/img/star.png" alt="" />
                   <img src="/img/star.png" alt="" />
-                  <span>5</span> <button className="buttonContact">Contact Me</button>
-              </div>
+                  <span>5</span>{" "}
+                  <button className="buttonContact">Contact Me</button>
                 </div>
-               
+              </div>
             </div>
             <div className="box">
               <div className="items">
@@ -223,11 +234,11 @@ function Gig() {
                 <span>5</span>
               </div>
               <p>
-                Amazing work! Communication was
-                amazing, each and every day he sent me images that I was free to
-                request changes to. They listened, understood, and delivered
-                above and beyond my expectations. I absolutely recommend this
-                gig, and know already that Ill be using it again very very soon
+                Amazing work! Communication was amazing, each and every day he
+                sent me images that I was free to request changes to. They
+                listened, understood, and delivered above and beyond my
+                expectations. I absolutely recommend this gig, and know already
+                that Ill be using it again very very soon
               </p>
               <div className="helpful">
                 <span>Helpful?</span>
